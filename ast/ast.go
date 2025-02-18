@@ -11,7 +11,7 @@ type Statement interface {
 	statementNode()
 }
 
-type Expresson interface {
+type Expression interface {
 	Node
 	expressinNode()
 }
@@ -28,10 +28,18 @@ func (p *Program) TokenLiteral() string {
 	}
 }
 
+type ReturnStatement struct {
+	Token       token.Token // token.RETURN
+	ReturnValue Expression
+}
+
+func (rs *ReturnStatement) statementNode()       {}
+func (rs *ReturnStatement) TokenLiteral() string { return rs.Token.Literal }
+
 type LetStatement struct {
 	Token token.Token // token.LET
 	Name  *Identifier
-	Value Expresson
+	Value Expression
 }
 
 func (ls *LetStatement) statementNode()       {}
