@@ -283,7 +283,16 @@ func (p *Parser) parseIfExpression() ast.Expression {
 		return nil
 	}
 
-	exp.Consequence = p.parseBlockStatement()
+	exp.Consequence = p.parseBlockStatment()
+
+	if p.peekTokenIs(token.ELSE) {
+		p.nextToken()
+		if !p.expectPeek(token.LBRACE) {
+			return nil
+		}
+
+		exp.Alternative = p.parseBlockStatment()
+	}
 
 	return exp
 }
