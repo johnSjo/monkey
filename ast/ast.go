@@ -256,7 +256,7 @@ func (ce *CallExpresson) String() string {
 	out.WriteString(ce.Funcion.String())
 	out.WriteString("(")
 	out.WriteString(strings.Join(args, ", "))
-	out.WriteString(") ")
+	out.WriteString(")")
 
 	return out.String()
 }
