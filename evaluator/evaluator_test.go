@@ -12,8 +12,8 @@ func TestErrorHandling(t *testing.T) {
 		input           string
 		expectedMessage string
 	}{
-		{"5 + true;", "type missmatch: INTERGER + BOOLEAN"},
-		{"5 + true; 5;", "type missmatch: INTERGER + BOOLEAN"},
+		{"5 + true;", "type mismatch: INTERGER + BOOLEAN"},
+		{"5 + true; 5;", "type mismatch: INTERGER + BOOLEAN"},
 		{"-true;", "unknown operator: -BOOLEAN"},
 		{"false + true;", "unknown operator: BOOLEAN + BOOLEAN"},
 		{"5; false + true; 5;", "unknown operator: BOOLEAN + BOOLEAN"},
