@@ -308,7 +308,7 @@ func (p *Parser) parseIfExpression() ast.Expression {
 }
 
 func (p *Parser) parseCallExpression(function ast.Expression) ast.Expression {
-	exp := &ast.CallExpresson{Token: p.curToken, Funcion: function}
+	exp := &ast.CallExpresson{Token: p.curToken, Function: function}
 
 	exp.Arguments = p.parseCallArguments()
 	return exp

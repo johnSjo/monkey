@@ -248,7 +248,7 @@ func (fl *FunctionLiteral) String() string {
 
 type CallExpresson struct {
 	Token     token.Token // the '(' token
-	Funcion   Expression
+	Function  Expression
 	Arguments []Expression
 }
 
@@ -262,7 +262,7 @@ func (ce *CallExpresson) String() string {
 		args = append(args, a.String())
 	}
 
-	out.WriteString(ce.Funcion.String())
+	out.WriteString(ce.Function.String())
 	out.WriteString("(")
 	out.WriteString(strings.Join(args, ", "))
 	out.WriteString(")")
